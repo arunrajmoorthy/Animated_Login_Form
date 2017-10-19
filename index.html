@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+ <head>
+ 
+     <title> Animated Login Form </title>
+	 <script type="text/javascript" src="script.js"> </script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	 <script type="text/javascript" src="jquery.label_better.js"></script>
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	 <link rel="stylesheet" href="style.css"/>
+	
+     <script>
+	 
+	     $(document).ready(function(){
+		     $("input.label_better").label_better({
+			     position:"top", easing: "ease-in-out", offset:5, hidePlaceholderOnFocus:true
+			 });
+		 });
+	 
+	 </script> 
+ </head>
+ 
+ <body>
+ 
+     <div class="login-form">
+	     <div class="front-face">
+		    <span class="text">LOGIN</span>
+		    <span class="loader"></span>
+		 </div>
+			<form>
+			     <input type="text" placeholder="Username" class="input label_better" data-position="top"/>  <br><br>
+			     <input type="password" placeholder="Password" class="input label_better"/> 
+			     <button class="input-btn"> </button>
+			</form>
+		 
+	 </div>
+     
+	 <script>
+	 
+	  $(document).ready(function(){
+	  
+	     var login-form = $(".login-form");
+	     $(".input").on("focus", function(){
+		      $(".login-form").addClass("focused");
+		 });
+		 $(".input-btn").on("click", function(e){
+		     e.preventDefault();
+			 $(".login-form").removeClass("focused").addClass("loading");
+			 
+		 });
+		 
+		/* if(login-form.hasClass("loading")) {
+		     setTimeout(function(){
+			     login-form.removeClass("loading");
+			 },10000)
+		 } */
+		 
+	  });  
+	 
+	 </script>
+ </body> 
+
+</html>
